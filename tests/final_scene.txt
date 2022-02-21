@@ -1,0 +1,41 @@
+
+Material "WhiteMat" Diffuse (.5, .5, .5) 1
+Material "BlackMat" Diffuse (0, 0, 0) 1
+Material "GlassMat" Refractive (1, 1, 1) 1.4
+Material "MirrorMat" Reflective (1, 1, 1) 1
+
+PointLight "Light1" (1, 1, 0) (1, .5, .5)
+PointLight "Light2" (1, 1, 4) (.5, 1, .5)
+PointLight "Light3" (1, 1, 8) (.5, .5, 1)
+PointLight "Light4" (1, 1, 12) (1, .5, .5)
+PointLight "Light5" (1, 1, 16) (.5, 1, .5)
+PointLight "Light6" (1, 1, 20) (.5, .5, 1)
+
+
+
+Plane "Floor" (0, -1, 0) (0, 1, 0) "WhiteMat"
+Plane "Roof" (0, 2, 0) (0, -1, 0) "WhiteMat"
+
+
+ObjModel "Bunny" "tests/models/bunny.obj" (0.7, -1, 4.5) .35 "WhiteMat"
+
+Triangle "LeftWallA" (-1, -1, 3) (-1, 0.5, 3) (-0.5, -1, 6.5) "GlassMat"
+Triangle "LeftWallB" (-1, 0.5, 3) (-0.5, 0.5, 6.5) (-0.5, -1, 6.5) "GlassMat"
+
+Triangle "RightWallA" (0.5, -1, 7) (2.5, 1, 5) (2.5, -1, 5)   "MirrorMat"
+Triangle "RightWallB" (0.5, -1, 7) (0.5, 1, 7) (2.5, 1, 5) "MirrorMat"
+
+Triangle "LargeRightWallA" (3, -1, 5) (2, -1, 10) (2, 2, 10) "MirrorMat"
+Triangle "LargeRightWallB" (2, 2, 10) (3, 2, 5) (3, -1, 5) "MirrorMat"
+
+Triangle "LargeLeftWallA" (-8, -1, 6) (0, 2, 8) (0, -1, 8) "MirrorMat"
+Triangle "LargeLeftWallB" (-8, -1, 6) (-8, 2, 6) (0, 2, 8) "MirrorMat"
+
+Triangle "FloorMirrorA" (1.5, -0.9999, 4) (1.5, -0.9999, 2) (0, -0.9999, 2) "MirrorMat"
+Triangle "FloorMirrorB" (1.5, -0.9999, 4) (0, -0.9999, 2) (0, -0.9999, 4) "MirrorMat"
+
+
+Sphere "WhiteSphere1" (.5, 0, 4.5) 0.2 "WhiteMat"
+Sphere "RefractiveSphere" (-2.5, -0.5, 5.5) 0.4 "MirrorMat"
+
+
